@@ -1,0 +1,25 @@
+import random as rdm
+
+X = rdm.randint(-100, 100)
+print("El número aleatorio es ", X)
+cont = 0
+
+if ((3*X) - 27) < 0:    
+    while True:
+        X1 = X + 0.2
+        X = round(X1, 2) #Redondeamos el valor de X1 pues nos estaba dando un error (error adjunto)
+        cont=cont+1
+        if ((3*X) - 27) >= 0 and ((3*X) - 27) <= 0.001:            
+            break
+elif ((3*X) - 27) >= 0:
+    while True: 
+        X1 = X - 0.2
+        X = round(X1, 2)
+        cont=cont+1
+        if abs((3*X) - 27) <= 0.001:
+            break
+else:
+    print("Lo siento, no tengo la respuesta, ejecuta de nuevo")
+
+print("Felicidades! La respuesta es: ", X)
+print("El número de iteraciones es ", cont)
